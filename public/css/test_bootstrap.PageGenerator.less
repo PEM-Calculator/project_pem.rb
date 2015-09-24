@@ -1,0 +1,184 @@
+//
+//	DropDownMenuBlock
+//
+div.DropDownMenuBlock {
+	* {
+		color: @text-color;
+	}
+
+	h1 {
+		text-align: center;
+		font-weight: 100;
+		font-size: 2.5em;
+	}
+
+	table.menu {
+		border: 0;
+
+		td {
+			position: relative;
+			text-align: center;
+			vertical-align: top;
+
+			h2 {
+				font-size: 1.1em;
+				text-align: left;
+				padding: 0 15px 0 20px;
+			}
+
+			.content {
+				cursor: default;
+				padding-bottom: 15px;
+
+				&:before {
+					display: block;
+					visibility: hidden;
+					position: relative;
+					border: 8px solid transparent;
+					border-top-color: white;
+					content: "";
+					margin: 0px auto -15px;
+					top: 0px;
+					width: 0px;
+					height: 0px;
+				}
+			}
+
+			.additional {
+				visibility: hidden;
+
+				> ul {
+					list-style: none;
+					padding: 0;
+					margin: 0;
+
+					> li {
+						display: block;
+						position: relative;
+						text-align: left;
+						font-size: .8em;
+						padding: 5px 10px 5px 28px;
+
+						&:before {
+							.button-rarr();
+							position: absolute;
+							left: 13px;
+							top: 6px;
+							font-weight: bold;
+						}
+
+						a {
+							display: block;
+						}
+					}
+				}
+
+				a.button {
+					border-color: white;
+					margin-top: 15px;
+
+					&:hover {
+						background: white;
+						color: @brand-primary;
+					}
+				}
+			}
+		}
+
+		td:hover, td.active {
+			* {
+				color: white;
+			}
+
+			.content {
+				background: fadeout(@brand-primary, 15%);
+
+				&:before {
+					visibility: visible;
+				}
+			}
+
+			.additional {
+				visibility: visible;
+			}
+
+			
+		}
+	}
+} // div.DropDownMenuBlock
+
+
+//
+//	NumbersInfoBlock
+//
+@color1: @brand-third;
+@color2: white;
+div.NumbersInfoBlock {
+	* {
+		color: @color2;
+	}
+
+	> div {
+		background-color: fadeout(@color1, 20%);
+		padding: 20px 0;
+	}
+
+	h1 {
+		text-align: center;
+		font-weight: 100;
+		font-size: 2.1em;
+	}
+
+	table {
+		border: 0;
+		margin: 40px auto;
+
+		td {
+			position: relative;
+			text-align: center;
+			vertical-align: top;
+
+			h2 {
+				font-size: 1.8em;
+				text-align: center;
+				padding: 0 15px 0 20px;
+			}
+
+			div.icon_here {
+				div.icon_box {
+					transform: rotate(-45deg);
+					width: 50px;
+					height: 50px;
+					border: 3px solid @color2;
+					border-radius: 1px;
+					margin: auto;
+					text-align: center;
+
+					i {
+						color: @color2;
+						transform: rotate(45deg);
+						display: block;
+						font-size: 30px;
+						line-height: 44px;
+					}
+				}
+			}
+		}
+
+		td:hover {
+			h2 .number {
+				font-weight: bold;
+			}
+
+			div.icon_here {
+				div.icon_box {
+					background: @color2;
+
+					i {
+						color: @color1;
+					}
+				}
+			}
+		}
+	}
+} // div.NumbersInfoBlock

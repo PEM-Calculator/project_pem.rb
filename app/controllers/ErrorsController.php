@@ -1,0 +1,1 @@
+/var/www/sites/Rainbow/app/controllers/ErrorsController.php

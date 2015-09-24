@@ -1,0 +1,5 @@
+app/config/config.ini
+logs/
+cache/
+config/development/
+*.sublime*
